@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AP1 谢尔宾斯基垫片</title>
+<style>
+canvas {border:1px solid #333;}
+#panel{margin-bottom:8px;}
+</style>
+</head>
+<body>
+<div id="panel">
+  <div>
+    递归深度:<input type="range" id="depth" min="0" max="6" value="4">
+    <span id="depthVal">4</span>
+  </div>
+  <div>
+    点大小:<input type="range" id="pointSize" min="1" max="10" value="2">
+    <span id="psVal">2</span>
+  </div>
+  <div>
+    配色方案:
+    <select id="colorScheme">
+      <option value="0">方案1 黑白</option>
+      <option value="1">方案2 蓝紫</option>
+      <option value="2">方案3 橙黄</option>
+    </select>
+  </div>
+  <div>
+    渲染模式:
+    <button data-mode="0">POINTS(1)</button>
+    <button data-mode="1">LINES(2)</button>
+    <button data-mode="2">TRIANGLES(3)</button>
+  </div>
+  <div>
+    混沌游戏点数:<input type="range" id="chaosCount" min="500" max="50000" value="10000">
+    <span id="ccVal">10000</span>
+  </div>
+  <p>键盘：1/2/3切换模式｜空格：暂停/继续点生长动画｜鼠标左键拖拽平移｜滚轮缩放</p >
+</div>
+<canvas id="glcanvas" width="800" height="600"></canvas>
+
+<script src="shaders.js"></script>
+<script src="ap1.js"></script>
+</body>
+</html>
